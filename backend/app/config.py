@@ -82,13 +82,13 @@ class Settings(BaseSettings):
     #     the backend and the Vite client during local development). These are
     #     **not** used by the backend; they are exposed for the frontend to read.
     # Real values come from `frontend/.env`; the backend never reads them.
-    VITE_FIREBASE_API_KEY: ClassVar[str] = ""
-    VITE_FIREBASE_AUTH_DOMAIN: ClassVar[str] = ""
-    VITE_FIREBASE_PROJECT_ID: ClassVar[str] = ""
-    VITE_FIREBASE_STORAGE_BUCKET: ClassVar[str] = ""
-    VITE_FIREBASE_MESSAGING_SENDER_ID: ClassVar[str] = ""
-    VITE_FIREBASE_APP_ID: ClassVar[str] = ""
-    VITE_FIREBASE_MEASUREMENT_ID: ClassVar[str] = ""
+    VITE_FIREBASE_API_KEY="AIzaSyAtEtlpFz2oUtMKlNil7-wpSqNFVepVCHY"
+    VITE_FIREBASE_AUTH_DOMAIN="bedrock-8b03e.firebaseapp.com"
+    VITE_FIREBASE_PROJECT_ID="bedrock-8b03e"
+    VITE_FIREBASE_STORAGE_BUCKET="bedrock-8b03e.firebasestorage.app"
+    VITE_FIREBASE_MESSAGING_SENDER_ID="550861317955"
+    VITE_FIREBASE_APP_ID="1:550861317955:web:41b11172856704c871b1f6"
+    VITE_FIREBASE_MEASUREMENT_ID="G-GF35E62473"
 
 
 @lru_cache
