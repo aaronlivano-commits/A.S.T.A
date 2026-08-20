@@ -5,6 +5,7 @@ client). The backend authenticates via the Firebase **Admin** SDK and only
 needs ``FIREBASE_CREDENTIALS_PATH`` / ``FIREBASE_CREDENTIALS_JSON`` /
 ``FIREBASE_STORAGE_BUCKET`` from the service account.
 """
+import os
 from functools import lru_cache
 from typing import ClassVar, List
 
@@ -82,13 +83,13 @@ class Settings(BaseSettings):
     #     the backend and the Vite client during local development). These are
     #     **not** used by the backend; they are exposed for the frontend to read.
     # Real values come from `frontend/.env`; the backend never reads them.
-    VITE_FIREBASE_API_KEY="AIzaSyAtEtlpFz2oUtMKlNil7-wpSqNFVepVCHY"
-    VITE_FIREBASE_AUTH_DOMAIN="bedrock-8b03e.firebaseapp.com"
-    VITE_FIREBASE_PROJECT_ID="bedrock-8b03e"
-    VITE_FIREBASE_STORAGE_BUCKET="bedrock-8b03e.firebasestorage.app"
-    VITE_FIREBASE_MESSAGING_SENDER_ID="550861317955"
-    VITE_FIREBASE_APP_ID="1:550861317955:web:41b11172856704c871b1f6"
-    VITE_FIREBASE_MEASUREMENT_ID="G-GF35E62473"
+    VITE_FIREBASE_API_KEY: str = os.environ.get("VITE_FIREBASE_API_KEY", "fallback_key_lokal")
+    VITE_FIREBASE_AUTH_DOMAIN: str ="bedrock-8b03e.firebaseapp.com"
+    VITE_FIREBASE_PROJECT_ID: str ="bedrock-8b03e"
+    VITE_FIREBASE_STORAGE_BUCKET: str ="bedrock-8b03e.firebasestorage.app"
+    VITE_FIREBASE_MESSAGING_SENDER_ID: str ="550861317955"
+    VITE_FIREBASE_APP_ID: str ="1:550861317955:web:41b11172856704c871b1f6"
+    VITE_FIREBASE_MEASUREMENT_ID: str ="G-GF35E62473"
 
 
 @lru_cache
