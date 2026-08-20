@@ -1,28 +1,31 @@
 {
-  "$schema": "https://vercel.sh",
-  "services": {
-    "frontend-service": {
-      "root": "frontend/"
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/app/main.py",
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": [
+          "backend/requirements.txt"
+        ]
+      }
     },
-    "backend-service": {
-      "root": "backend/",
-      "entrypoint": "app.main:app"
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
-  },
-  "rewrites": [
+  ],
+  "routes": [
     {
-      "source": "/api/:path*",
-      "destination": {
-        "service": "backend-service",
-        "path": "/:path*"
-      }
+      "src": "/api/:path*",
+      "dest": "backend/app/main.py"
     },
     {
-      "source": "/(.*)",
-      "destination": {
-        "service": "frontend-service",
-        "path": "/$1"
-      }
+      "src": "/(.*)",
+      "dest": "frontend/$1"
     }
   ]
 }
