@@ -1,30 +1,23 @@
 {
-  "builds": [
+  "$schema": "https://vercel.sh",
+  "services": [
     {
-      "src": "pyproject.toml",
-      "use": "@vercel/python"
+      "src": "frontend",
+      "id": "frontend-service"
     },
     {
-      "src": "frontend/**",
-      "use": "@vercel/static"
+      "src": "backend",
+      "id": "backend-service"
     }
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "frontend/$1"
-    },
-    {
-      "src": "/(assets|css|js|images)/(.*)",
-      "dest": "frontend/$1/$2"
-    },
-    {
       "src": "/api/(.*)",
-      "dest": "pyproject.toml"
+      "dest": "backend-service"
     },
     {
       "src": "/(.*)",
-      "dest": "frontend/index.html"
+      "dest": "frontend-service"
     }
   ]
 }

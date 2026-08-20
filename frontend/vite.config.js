@@ -10,7 +10,6 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5173,
     proxy: {
       // Forwards API calls to the FastAPI backend during local development.
       // See section 6 of the architecture doc for the full endpoint list.
