@@ -1,23 +1,28 @@
 {
-  "$schema": "https://vercel.sh",
-  "services": [
-    {
-      "src": "frontend",
-      "id": "frontend-service"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "frontend-service": {
+      "root": "frontend/"
     },
-    {
-      "src": "backend",
-      "id": "backend-service"
+    "backend-service": {
+      "root": "backend/",
+      "entrypoint": "app.main:app"
     }
-  ],
-  "routes": [
+  },
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "backend-service"
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "backend-service",
+        "path": "/api/$1"
+      }
     },
     {
-      "src": "/(.*)",
-      "dest": "frontend-service"
+      "source": "/(.*)",
+      "destination": {
+        "service": "frontend-service",
+        "path": "/$1"
+      }
     }
   ]
 }
