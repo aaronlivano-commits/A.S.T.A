@@ -63,13 +63,13 @@ def create_app() -> FastAPI:
         return await call_next(request)
 
     prefix = settings.api_v1_prefix
-    app.include_router(auth.router, prefix=prefix, tags=["auth"])
-    app.include_router(topics.router, prefix=prefix, tags=["topics"])
-    app.include_router(documents.router, prefix=prefix, tags=["documents"])
-    app.include_router(vision.router, prefix=prefix, tags=["vision"])
-    app.include_router(chat.router, prefix=prefix, tags=["chat"])
-    app.include_router(training.router, prefix=prefix, tags=["training"])
-    app.include_router(portability.router, prefix=prefix, tags=["portability"])
+    app.include_router(auth.router, prefix="/api", tags=["auth"])
+    app.include_router(topics.router, prefix="/api", tags=["topics"])
+    app.include_router(documents.router, prefix="/api", tags=["documents"])
+    app.include_router(vision.router, prefix="/api", tags=["vision"])
+    app.include_router(chat.router, prefix="/api", tags=["chat"])
+    app.include_router(training.router, prefix="/api", tags=["training"])
+    app.include_router(portability.router, prefix="/api", tags=["portability"])
 
     @app.get("/", tags=["health"])
     def root():
