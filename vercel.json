@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "backend/pyproject.toml",
+      "src": "pyproject.toml",
       "use": "@vercel/python"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "src": "/api/(.*)",
-      "dest": "backend/pyproject.toml"
+      "dest": "pyproject.toml"
     },
     {
       "src": "/(.*)",
