@@ -1,0 +1,30 @@
+{
+  "builds": [
+    {
+      "src": "backend/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "frontend/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "frontend/$1"
+    },
+    {
+      "src": "/(assets|css|js|images)/(.*)",
+      "dest": "frontend/$1/$2"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/index.html"
+    }
+  ]
+}
