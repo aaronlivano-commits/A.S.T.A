@@ -1,0 +1,19 @@
+# Abaikan folder virtual environment Python lokal
+venv/
+.venv/
+env/
+*env/
+
+# Abaikan dependensi frontend lokal
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+
+# Abaikan file log dan cache sampah
+__pycache__/
+*.pyc
+.git/
+.vercel/
+log_book.txt
+system_up.txt
