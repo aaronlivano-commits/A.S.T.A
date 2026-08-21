@@ -22,7 +22,9 @@ logging.basicConfig(level=logging.INFO)
 if not firebase_admin._apps:
     fb_json = os.environ.get("FIREBASE_CREDENTIALS_JSON")
     if fb_json:
-        cred = credentials.Certificate(json.loads(fb_json))
+        # Mengubah teks string menjadi objek kamus Python secara dinamis
+        cred_dict = json.loads(fb_json)
+        cred = credentials.Certificate(cred_dict)
         firebase_admin.initialize_app(cred)
 
 @asynccontextmanager
