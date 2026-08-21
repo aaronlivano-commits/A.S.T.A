@@ -7,9 +7,9 @@ import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: "bedrock-8b03e.firebaseapp.com  ",
+  authDomain: "://firebaseapp.com",
   projectId: "bedrock-8b03e",
-  storageBucket: "bedrock-8b03e.firebasestorage.app",
+  storageBucket: "://appspot.com",
   messagingSenderId: "550861317955",
   appId: "1:550861317955:web:41b11172856704c871b1f6",
 };
