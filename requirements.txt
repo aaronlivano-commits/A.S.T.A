@@ -1,38 +1,38 @@
 # --- Web framework ---
-fastapi==0.115.0
-uvicorn[standard]==0.30.6
-python-multipart==0.0.9
-pydantic==2.9.2
-pydantic-settings==2.5.2
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+pydantic-settings
 
 # --- Auth (Firebase Admin) ---
-firebase-admin==6.5.0
-PyJWT==2.9.0
+firebase-admin
+PyJWT
 # cryptography 42+ ships rust bindings that fail to load on Python 3.9 (DLL
 # load error 127). Pin to <42 until the project moves to Python 3.10+.
-cryptography>=41,<42
+cryptography
 
 # --- Google Gemini ---
-google-genai==1.0.0
+google-genai
 
 # --- Data training & parsing ---
-pandas==2.2.3
-openpyxl==3.1.5
-numpy==1.26.4
+pandas
+openpyxl
+numpy
 
 # --- Vision / OCR ---
-opencv-python-headless==4.10.0.84
-easyocr==1.7.1
-Pillow==10.4.0
+opencv-python-headless
+easyocr
+Pillow
 
 # --- Vector store ---
-chromadb==0.5.5
+chromadb
 # faiss-cpu==1.8.0.post1  # optional alternative
 
 # --- PEFT / LoRA fine-tuning ---
-torch==2.4.1
-peft==0.12.0
-safetensors==0.4.5
+torch
+peft
+safetensors
 
 # --- Utilities ---
-python-dotenv==1.0.1
+python-dotenv
