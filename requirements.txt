@@ -8,8 +8,6 @@ pydantic-settings
 # --- Auth (Firebase Admin) ---
 firebase-admin
 PyJWT
-# cryptography 42+ ships rust bindings that fail to load on Python 3.9 (DLL
-# load error 127). Pin to <42 until the project moves to Python 3.10+.
 cryptography
 
 # --- Google Gemini ---
@@ -30,7 +28,9 @@ chromadb
 # faiss-cpu==1.8.0.post1  # optional alternative
 
 # --- PEFT / LoRA fine-tuning ---
-torch
+--index-url https://download.pytorch.org/whl/cpu
+torch==2.1.1+cpu
+torchvision==0.16.1+cpu
 peft
 safetensors
 
