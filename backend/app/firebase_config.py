@@ -9,6 +9,10 @@ can boot even if the optional Firebase dependency is not installed
 """
 from __future__ import annotations
 
+import os
+import firebase_admin
+from firebase_admin import credentials
+
 import json
 import logging
 from pathlib import Path
@@ -110,6 +114,17 @@ def init_firebase() -> Optional[Any]:
     (deps missing, DLL broken, or no service-account configured).
     """
     global _initialized_app
+    firebase_json = os.environ.get("FIREBASE_CREDENTIALS_JSON")
+    if firebase_json:
+        try:
+            cred_dict = json.loads(firebase_json)
+            cred = credentials.Certificate(cred_dict)
+            firebase_admin.initialize_app(cred)
+            print("INFO: Firebase Admin SDK successfully initialized via JSON String.")
+            return
+        except Exception as e:
+            print(f"ERROR: Failed to parse FIREBASE_CREDENTIALS_JSON: {e}")
+            print("WARNING: Firebase Credentials not configured. Backend AI features might throw 500.")
     if _initialized_app is not None:
         return _initialized_app
     try:
