@@ -7,11 +7,11 @@ import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  authDomain: "bedrock-8b03e.firebaseapp.com  ",
+  projectId: "bedrock-8b03e",
+  storageBucket: "bedrock-8b03e.firebasestorage.app",
+  messagingSenderId: "550861317955",
+  appId: "1:550861317955:web:41b11172856704c871b1f6",
 };
 
 export const app = initializeApp(firebaseConfig);

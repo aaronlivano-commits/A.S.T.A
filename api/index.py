@@ -9,9 +9,9 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from .config import get_settings
-from .firebase_config import init_firebase
-from .routers import auth, chat, documents, portability, topics, training, vision
+from app.config import get_settings
+from app.firebase_config import init_firebase
+from app.routers import auth, chat, documents, portability, topics, training, vision
 
 import firebase_admin
 from firebase_admin import credentials
