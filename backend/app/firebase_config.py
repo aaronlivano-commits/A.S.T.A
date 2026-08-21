@@ -26,6 +26,20 @@ _initialized_app: Optional[Any] = None
 _firebase_module: Optional[Any] = None
 _import_error: Optional[BaseException] = None
 
+firebaseConfig = {
+  "type": "service_account",
+  "project_id": "bedrock-8b03e",
+  "private_key_id": "772455d04d4b0b4219336de05cfc28a3058ce726",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCjXyW6Dp+Vcc1H\nvA1e0TSgmb9nCPqMt6WJG5teDCYgWuNp3Fy5Fe3iZ+2tFrTwIra197Rgqg+axqkg\nEH+ejMf1APzHdKlmXdQxPmqc+jgaypmLaC3WRVArsx0A7FkpEP3ByAM5I89PvmpX\nEbBC3eDQylBConeloTNtR5nUqQLezNblklR/K3Ma+4Lf57/AbRRZe6R6HOXIPqKI\nUI1q24coNKrPGhRDnQefcftpgia/7jpvhwV0xy5o87GbFMzxDux8Xqpj43M6pFhI\nAW3CiuEf+ftqwQESna8cU3W40FcABoJQcIi83n8E+BSOaAxYdHVUz6xO8n9Uwwbg\nq2nltI4xAgMBAAECggEAEQyze7zd87M6OLPL82rC4sXY31BlEX1y9aGfb8u1yOej\nVx9rv9clidzNxaQagvskdU4iEXp+AWmdKd7+6pWHoq6VMt2edjPxmqgIaVSFuWoO\nZymaqwN1z/Gz465Gyc3fpbMRfwuZLZnSMD8E1Z2hQjjy8llRQkRWASAZUkPHLGgq\nhAPc1jzpw26HryWn9BMbuCpOEYmCHnFnCDnadIm66Vm2DqFROrqCF+PFuD4/1ucW\ndGUE+lyJClVSlhEF9Jz9ophAgJK6xtftGVm0ulheAHZV29hbQjOddB7XczLzjB04\nhcEmTtpYrIc5nvjEJaIoh8p5zFKltPj3aviveeECYQKBgQDWKOS6AQAtCljepL/H\nI48QuFeWSHAAZqe6PqjxJ0yyPp2tgs7hMdhBaQiYE/KEPkyJz351ZuD+G5D7k1MN\nbg1mHioZiSaVaMQ+wGpUk8Te/x/Cn6lg3ZnvxyBr4dlCRDbm2XuInKjlr52Y8Fkj\nb0HC2BxxZhL/CD6ZwYkQPM4YiQKBgQDDShxOo08ADwPN9V/jI2MVkRUmUsdtg75D\n/Eq9niZBUwsP7NpV7vM/9M1zulKj3erG0lI11akgOy5jLxdeGJOo2y/m98ZEVjza\nPpdNIhTNrVT6onkbf4XnNIy3mvNPYigt7YJLhxkAcCNctj30VKpye/0c5gyVhFsW\n3gpI8e0OaQKBgBUIBw5NMts5fOjAfSTtVQtrTw6vJnCjpC0iIi0skteeVpXHltF+\nt6IU0oc8zkA2bgXKnryg0c+inWZXXXygJii1JaVEVsmtdDhFZSvRJzBPFatjSpr8\nqDVn9MMjdtaPJGUfToZn/B4yVOPEFrzoHCkqWAC66XqqMJug6fjyP7shAoGAGTov\nofDyuZ027pouAteFaznMs6Cp5nnIUFv9A7W0V2f029/K7KLrhW2IRNTi7Aw00e5F\ndHLfYCyE94cTy7H9ESkPbRTA5f8F6WOAhBRM/6zOd3oZjvXQRGfDbcx0deLGMfim\nhj8zeZ0C1G0uX6u4QQXHUr5dDcuFQNT6GyY1a1ECgYAUt6geM2Pn/cpXnjtz12L8\nEUBQCD1daWT1sLvY33zMqhlbGZLslqkMNGvz8EDpSpWnA2R5jB93yjgUiflf1IyC\nbLjxzv7fJChCCij7Fcs0gON23KCaRBcHy6idtHgPoRwABM6Vn3UdPmIriWIrkvaF\nD9gw63Z1ejEGdm0GxjnaZQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@bedrock-8b03e.iam.gserviceaccount.com",
+  "client_id": "113059802634720773598",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40bedrock-8b03e.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
+
 
 class FirebaseUnavailable(RuntimeError):
     """Raised when Firebase Admin cannot be imported or initialized.

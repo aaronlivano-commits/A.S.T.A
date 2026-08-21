@@ -1,6 +1,7 @@
 """FastAPI entrypoint for the A.S.T.A. backend."""
 from __future__ import annotations
-
+import os
+import json
 import logging
 from contextlib import asynccontextmanager
 
@@ -12,9 +13,17 @@ from .config import get_settings
 from .firebase_config import init_firebase
 from .routers import auth, chat, documents, portability, topics, training, vision
 
+import firebase_admin
+from firebase_admin import credentials
+
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
+if not firebase_admin._apps:
+    fb_json = os.environ.get("FIREBASE_CREDENTIALS_JSON")
+    if fb_json:
+        cred = credentials.Certificate(json.loads(fb_json))
+        firebase_admin.initialize_app(cred)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -87,3 +96,4 @@ def create_app() -> FastAPI:
 
 
 app = create_app()
+
